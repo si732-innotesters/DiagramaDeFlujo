@@ -1,0 +1,33 @@
+@startuml
+start
+:Entrar a Rentstate;
+:Entrar a la sección de login;
+if (Datos correctos?) then (Sí)
+  :Logearse;
+  :Entrar al panel de control;
+  :Navegar a "Mi Perfil";
+  if (Presiona desloguearse?) then (Sí)
+    :Desloguearse;
+    :Entrar a la sección de login;
+  else (No)
+    :Navegar a "Tus Propiedades";
+    :Hacer clic en "Añadir Propiedad";
+    if (Cancela los datos?) then (Sí)
+      :Cancelar;
+      :Navegar a "Tus Propiedades";
+    else (No)
+      :Rellenar el formulario de propiedad;
+      if (Datos válidos?) then (Sí)
+        :Enviar el formulario;
+        :Navegar a "Tus Propiedades";
+        :Verificar que la propiedad se añadió correctamente;
+      else (No)
+        :Error en el formulario;
+      endif
+    endif
+  endif
+else (No)
+  :Fin;
+endif
+stop
+@enduml

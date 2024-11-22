@@ -1,0 +1,12 @@
+@startuml
+start
+:Entrar a Rentstate;
+:Entrar a la sección de login;
+if (Datos correctos?) then (Sí)
+  :Logearse;
+  :Entrar al panel de control;
+else (No)
+  :Fin;
+endif
+stop
+@enduml
